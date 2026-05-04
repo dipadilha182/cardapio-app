@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Forno Nobre | Cardápio Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <a class="brand" href="#" aria-label="Forno Nobre">
+        <span class="brand-mark">FN</span>
+        <span>
+          <strong>Forno Nobre</strong>
+          <small>Cardápio digital</small>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <span class="status"><span></span>Aberto agora</span>
+        <button class="search-toggle" id="searchToggle" type="button" aria-label="Mostrar busca">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10.8 4a6.8 6.8 0 1 1 0 13.6 6.8 6.8 0 0 1 0-13.6Zm0 2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm5.55 9.14 3.25 3.25-1.41 1.41-3.25-3.25 1.41-1.41Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-bar" id="searchBar">
+      <input id="searchInput" type="search" placeholder="Buscar pizza, bebida, combo..." autocomplete="off">
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero-banner" aria-label="Promoção principal">
+      <div>
+        <p>Oferta da noite</p>
+        <h1>Combo pizza grande + refrigerante com entrega rápida.</h1>
+        <span>A partir de R$ 54,90</span>
+      </div>
+    </section>
+
+    <section class="menu-layout">
+      <div class="menu-column">
+        <section class="categories" aria-label="Categorias do cardápio">
+          <button class="category active" type="button" data-category="Todos">Todos</button>
+          <button class="category" type="button" data-category="Pizzas">Pizzas</button>
+          <button class="category" type="button" data-category="Bebidas">Bebidas</button>
+          <button class="category" type="button" data-category="Combos">Combos</button>
+          <button class="category" type="button" data-category="Sobremesas">Sobremesas</button>
+        </section>
+
+        <section class="section-heading">
+          <div>
+            <p>Cardápio</p>
+            <h2>Escolha seus favoritos</h2>
+          </div>
+          <span id="productCount">0 itens</span>
+        </section>
+
+        <section class="product-grid" id="productGrid" aria-live="polite"></section>
+      </div>
+
+      <aside class="cart-panel" aria-label="Carrinho do pedido">
+        <div class="cart-header">
+          <div>
+            <p>Seu pedido</p>
+            <h2>Carrinho</h2>
+          </div>
+          <span id="cartCount">0</span>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty" id="cartEmpty">
+          <strong>Seu carrinho está vazio</strong>
+          <p>Adicione produtos para montar seu pedido.</p>
+        </div>
+
+        <div class="cart-summary">
+          <div>
+            <span>Total</span>
+            <strong id="cartTotal">R$ 0,00</strong>
+          </div>
+          <button class="primary-btn" id="checkoutButton" type="button" disabled>Finalizar pedido</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <button class="mobile-cart-button" id="mobileCartButton" type="button">
+    <span>Ver carrinho</span>
+    <strong id="mobileCartTotal">R$ 0,00</strong>
+  </button>
+
+  <div class="modal-backdrop" id="checkoutModal" aria-hidden="true">
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="modal-header">
+        <div>
+          <p>Finalização</p>
+          <h2 id="checkoutTitle">Dados do pedido</h2>
+        </div>
+        <button class="close-modal" id="closeModal" type="button" aria-label="Fechar finalização">×</button>
+      </div>
+
+      <form class="checkout-form" id="checkoutForm">
+        <label>
+          <span>Nome</span>
+          <input id="customerName" type="text" placeholder="Seu nome" required>
+        </label>
+
+        <label>
+          <span>Endereço</span>
+          <input id="customerAddress" type="text" placeholder="Rua, número, bairro" required>
+        </label>
+
+        <label>
+          <span>Forma de pagamento</span>
+          <select id="paymentMethod" required>
+            <option value="">Selecione</option>
+            <option>Pix</option>
+            <option>Cartão de crédito</option>
+            <option>Cartão de débito</option>
+            <option>Dinheiro</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Observações</span>
+          <textarea id="orderNotes" rows="4" placeholder="Ex: retirar cebola, troco para R$ 100..."></textarea>
+        </label>
+
+        <button class="primary-btn" type="submit">Finalizar no WhatsApp</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
