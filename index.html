@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="app-header">
@@ -27,6 +27,13 @@
             <path d="M10.8 4a6.8 6.8 0 1 1 0 13.6 6.8 6.8 0 0 1 0-13.6Zm0 2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm5.55 9.14 3.25 3.25-1.41 1.41-3.25-3.25 1.41-1.41Z"/>
           </svg>
         </button>
+
+        <button class="info-toggle" id="infoToggle" type="button" aria-label="Informações do restaurante">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 4.5a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 12 6.5Zm1.5 10h-3v-1.8h.8v-3h-.8V9.9h2.6v4.8h.4Z"/>
+          </svg>
+        </button>
+
       </div>
     </div>
 
@@ -105,6 +112,13 @@
           <h2 id="checkoutTitle">Dados do pedido</h2>
         </div>
         <button class="close-modal" id="closeModal" type="button" aria-label="Fechar finalização">×</button>
+
+        <button class="info-toggle" id="infoToggle" type="button" aria-label="Informações do restaurante">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 4.5a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 12 6.5Zm1.5 10h-3v-1.8h.8v-3h-.8V9.9h2.6v4.8h.4Z"/>
+          </svg>
+        </button>
+
       </div>
 
       <form class="checkout-form" id="checkoutForm">
@@ -139,6 +153,70 @@
     </section>
   </div>
 
-  <script src="script.js"></script>
+  
+  <div class="modal-backdrop" id="infoModal" aria-hidden="true">
+    <section class="info-modal" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+      <div class="modal-header">
+        <div>
+          <p>Restaurante</p>
+          <h2 id="infoTitle">Informações</h2>
+        </div>
+        <button class="close-modal" id="closeInfoModal" type="button" aria-label="Fechar informações">×</button>
+      </div>
+
+      <div class="restaurant-info-content">
+        <div class="info-block">
+          <h3>Sobre</h3>
+          <p>
+            Restaurante especializado em pizzas artesanais com ingredientes frescos,
+            atendimento rápido e pedidos diretamente pelo WhatsApp.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Horários</h3>
+            <p>Segunda a Domingo</p>
+            <strong>18h às 23h</strong>
+          </div>
+
+          <div class="info-card">
+            <h3>Entrega</h3>
+            <p>Taxa fixa</p>
+            <strong>R$ 5,00</strong>
+          </div>
+
+          <div class="info-card">
+            <h3>Endereço</h3>
+            <p>Rua Exemplo, 245</p>
+            <strong>Centro</strong>
+          </div>
+
+          <div class="info-card">
+            <h3>Contato</h3>
+            <p>(11) 99999-9999</p>
+            <strong>(11) 4002-8922</strong>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3>Formas de pagamento</h3>
+          <div class="payment-tags">
+            <span>PIX</span>
+            <span>Débito</span>
+            <span>Crédito</span>
+            <span>Dinheiro</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="smartmenu-footer">
+    <img src="../assets/smartmenu-logo.png" alt="SmartMenu">
+  </footer>
+
+
+  <script src="../js/script.js"></script>
 </body>
 </html>

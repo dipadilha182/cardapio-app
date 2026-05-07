@@ -925,3 +925,103 @@ svg {
     width: 100%;
   }
 }
+
+
+.info-toggle {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--black);
+}
+
+.info-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.info-modal {
+  width: min(640px, 100%);
+  border-radius: 24px;
+  background: var(--white);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.restaurant-info-content {
+  display: grid;
+  gap: 20px;
+}
+
+.info-block h3,
+.info-card h3 {
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.info-block p,
+.info-card p {
+  color: var(--muted);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.info-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  background: var(--gray);
+}
+
+.info-card strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--black);
+}
+
+.payment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.payment-tags span {
+  border-radius: 999px;
+  background: var(--red-soft);
+  color: var(--red);
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.smartmenu-footer {
+  display: flex;
+  justify-content: center;
+  padding: 36px 20px 24px;
+}
+
+.smartmenu-footer img {
+  width: 170px;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-modal {
+    padding: 18px;
+  }
+
+  .smartmenu-footer img {
+    width: 140px;
+  }
+}

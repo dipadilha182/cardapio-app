@@ -355,3 +355,29 @@ document.addEventListener("keydown", (event) => {
 
 renderProducts();
 renderCart();
+
+
+const infoToggle = document.querySelector("#infoToggle");
+const infoModal = document.querySelector("#infoModal");
+const closeInfoModal = document.querySelector("#closeInfoModal");
+
+function openInfoModal() {
+  infoModal.classList.add("open");
+  infoModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeInfoModalHandler() {
+  infoModal.classList.remove("open");
+  infoModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+infoToggle.addEventListener("click", openInfoModal);
+closeInfoModal.addEventListener("click", closeInfoModalHandler);
+
+infoModal.addEventListener("click", (event) => {
+  if (event.target === infoModal) {
+    closeInfoModalHandler();
+  }
+});
